@@ -11,22 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/home': {
-        target: 'http://devtuoban.weizaojiao.cn/',
+      '/api': {
+        target: 'http://192.168.1.123:8866',
         changeOrigin: true,
         pathRewrite: {
-          '^/Business': '/Business'
-        }
-      },
-      '/login': {
-        // target: 'http://h.weizaojiao.cn',// 本地php服务
-        // target: 'http://www.home.com',// 本地php服务
-        // target: 'http://lxx.home.weizaojiao.cn:8082',
-        target: 'http://devtuoban.weizaojiao.cn/',
-        // target: 'http://www.wzj.com:8082',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/Business': '/Business'
+          '^/api': '/'
         }
       }
     },
@@ -39,7 +28,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */
