@@ -44,6 +44,7 @@ ol {
     line-height: 70px;
     font-size: 18px;
     text-align: center;
+    cursor: pointer;
 
     &.activeClass {
       color: #ff6600;

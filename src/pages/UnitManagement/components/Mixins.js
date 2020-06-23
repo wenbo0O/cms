@@ -6,13 +6,10 @@ import {
 export default {
   computed: {
     ...mapState({
-      UnitManagement: 'UnitManagement',
+      UnitManagement: 'UnitManagement'
     })
   },
   methods: {
-    ...mapActions({
-      getStudentList: 'UnitManagement/getStudentList'
-    }),
     ...mapMutations({
       // navtab当前index
       SETNAVACTIVE: 'UnitManagement/SETNAVACTIVE',
@@ -22,6 +19,7 @@ export default {
       RESETRULEFORMSLIDERBOX: 'UnitManagement/RESETRULEFORMSLIDERBOX',
       // 设置右侧划框form表单数据
       SETRULEFORMSLIDERBOX: 'UnitManagement/SETRULEFORMSLIDERBOX',
+
       SETOPTIONS: 'UnitManagement/SETOPTIONS'
     }),
     ...mapActions({

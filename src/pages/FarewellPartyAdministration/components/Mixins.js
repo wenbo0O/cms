@@ -6,14 +6,16 @@ import {
 export default {
   computed: {
     ...mapState({
+      FarewellPartyAdministration: 'FarewellPartyAdministration'
     })
   },
   methods: {
-    ...mapActions({
-    }),
     ...mapMutations({
+      SETOPTIONS: 'FarewellPartyAdministration/SETOPTIONS'
     }),
     ...mapActions({
+      findAllFHs: 'FarewellPartyAdministration/findAllFHs',
+      getFindAllFHs: 'FarewellPartyAdministration/getFindAllFHs'
     })
 
   }

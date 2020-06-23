@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- 单位管理 -->
+    <c-title>单位管理</c-title>
     <!-- 导航 -->
     <unit-management-nav></unit-management-nav>
 
@@ -14,6 +15,7 @@
 <script>
 import mixin from "./components/Mixins";
 import components from "./components";
+import CTitle from "@/components/CTitle";
 import UnitManagementNav from "./UnitManagementNav";
 
 export default {
@@ -24,6 +26,7 @@ export default {
   },
 
   components: {
+    CTitle,
     UnitManagementNav
   },
 

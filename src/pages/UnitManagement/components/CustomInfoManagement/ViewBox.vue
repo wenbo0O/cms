@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- 风俗信息管理 -->
-    <component :is="indexComponent"></component>
+    <component :is="indexComponent" />
+    <LookCustomInfoManagement />
   </div>
 </template>
 
@@ -26,12 +27,6 @@ export default {
     indexComponent() {
       return this.componentName[this.UnitManagement.indexCustomInfoManagement];
     }
-  },
-  methods: {}
+  }
 };
 </script>
-
-<style lang="stylus" scoped rel="stylesheet/stylus"></style>
-
-
-

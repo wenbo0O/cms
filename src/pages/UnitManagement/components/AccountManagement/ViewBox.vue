@@ -19,8 +19,7 @@ export default {
     indexComponent() {
       return this.componentName[this.UnitManagement.indexAccountManagement];
     }
-  },
-  methods: {}
+  }
 };
 </script>
 

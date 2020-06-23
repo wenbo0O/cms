@@ -1,11 +1,10 @@
 <template>
   <div>
     <!-- 告别会管理 -->
+    <c-title>告别会管理</c-title>
 
     <from-administration></from-administration>
-    <!-- <table-administration></table-administration> -->
-    <table-dialog></table-dialog>
-    <!-- <newly-build-from></newly-build-from> -->
+    <table-administration></table-administration>
 
     <!-- 逝者资料 -->
     <!-- <dead-information></dead-information> -->
@@ -25,18 +24,13 @@
 import mixin from "./components/Mixins";
 import components from "./components";
 import components_templateSettings from "./components/components";
+import CTitle from "@/components/CTitle";
+
 export default {
   mixins: [components, mixin, components_templateSettings],
 
-  data() {
-    return {};
-  },
-
-  methods: {}
+  components: {
+    CTitle
+  }
 };
 </script>
-
-<style lang="stylus" scoped rel="stylesheet/stylus"></style>
-
-
-

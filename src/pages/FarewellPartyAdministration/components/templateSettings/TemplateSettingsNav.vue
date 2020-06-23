@@ -1,12 +1,32 @@
 <template>
   <div>
     <ol>
-      <li class="activeClass">背景模板</li>
-      <li>文案模板</li>
-      <li>音乐模板</li>
+      <li
+        v-for="(item, index) in listInfo"
+        :key="index"
+        :class="{activeClass:index==activeIndex}"
+        @click="changeFn(index)"
+      >{{item}}</li>
     </ol>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      listInfo: ["背景模板", "文案模板", "音乐模板"],
+      activeIndex: 0
+    };
+  },
+  methods: {
+    changeFn(index) {
+      this.activeIndex = index;
+      this.$emit("change-index", index);
+    }
+  }
+};
+</script>
 
 <style lang="stylus" scoped>
 ol {

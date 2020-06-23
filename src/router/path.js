@@ -1,5 +1,6 @@
 import NurserySetting from '@/pages/NurserySetting'
-import Login from '@/pages/Login' // 登录
+import UserLogin from '@/pages/UserLogin' // 登录
+import Handlers from '@/pages/Handlers' // 管理员登录首页
 import FarewellPartyAdministration from '@/pages/FarewellPartyAdministration' // 告别会管理
 import UnitManagement from '@/pages/UnitManagement' // 单位管理
 import AccountManagementView from '@/pages/UnitManagement/components/AccountManagement/ViewBox' // 单位管理 - 账号管理&新建
@@ -10,7 +11,7 @@ import CustomInfoView from '@/pages/UnitManagement/components/CustomInfoManageme
  * jurisdiction 权限鉴别
  * 1 操作者
  * 2 审核者
- * 3 单位管理员
+ * 3 单位管理员 
  */
 export default [{
     path: '/',
@@ -22,12 +23,21 @@ export default [{
     }
   },
   {
-    path: '/Login1',
-    name: 'Login',
-    component: Login,
+    path: '/UserLogin',
+    name: 'UserLogin',
+    component: UserLogin,
     meta: {
       title: "登录",
-      jurisdiction: [1, 2]
+      jurisdiction: [1, 2, 3]
+    }
+  },
+  {
+    path: '/Handlers',
+    name: 'Handlers',
+    component: Handlers,
+    meta: {
+      title: "管理员登录首页",
+      jurisdiction: [1]
     }
   },
   {
@@ -36,7 +46,7 @@ export default [{
     component: FarewellPartyAdministration,
     meta: {
       title: "demo",
-      jurisdiction: [1]
+      jurisdiction: [1, 3]
     }
   },
   {
@@ -45,8 +55,8 @@ export default [{
     component: UnitManagement,
     redirect: '/Unit/AccountManagementView',
     meta: {
-      title: "demo",
-      jurisdiction: [1]
+      title: "Unit",
+      jurisdiction: [3]
     },
     children: [{
       path: '/Unit/AccountManagementView',
@@ -54,7 +64,7 @@ export default [{
       component: AccountManagementView,
       meta: {
         title: "demo",
-        jurisdiction: [1]
+        jurisdiction: [3]
       }
     }, {
       path: '/Unit/HallManagementView',
@@ -62,7 +72,7 @@ export default [{
       component: HallManagementView,
       meta: {
         title: "demo",
-        jurisdiction: [1]
+        jurisdiction: [3]
       }
     }, {
       path: '/Unit/CustomInfoView',
@@ -70,7 +80,7 @@ export default [{
       component: CustomInfoView,
       meta: {
         title: "风俗信息管理",
-        jurisdiction: [1]
+        jurisdiction: [3]
       }
     }]
   }, {

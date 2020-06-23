@@ -1,7 +1,6 @@
 <template>
   <div>
-    <template-settings-nav></template-settings-nav>
-    <!-- <router-view></router-view> -->
+    <template-settings-nav @change-index="onChangeIndex"></template-settings-nav>
 
     <!-- 背景模板 -->
     <!-- 文案模板 -->
@@ -20,8 +19,13 @@ export default {
         "TemplateSettingsText",
         "TemplateSettingsMusic"
       ],
-      activeIndex: 1
+      activeIndex: 0
     };
+  },
+  methods: {
+    onChangeIndex(index) {
+      this.activeIndex = index;
+    }
   }
 };
 </script>
